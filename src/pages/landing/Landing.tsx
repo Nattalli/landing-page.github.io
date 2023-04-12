@@ -1,5 +1,5 @@
 export default function Landing() {
   return (
-      <>Hello world!</>
+      <div>Hello world!</div>
   );
 }
