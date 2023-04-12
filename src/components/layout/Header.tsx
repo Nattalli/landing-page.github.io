@@ -12,17 +12,17 @@ export default function Header() {
     return (
         <Layout.Header className="header">
             <div className="header-content">
-                <div className="header-content">
-                    <Typography.Link onClick={() => handleClick('block1')}>
+                <div className="header-links">
+                    <Typography.Link className="header-link" onClick={() => handleClick('block1')}>
                         Про конкурс
                     </Typography.Link>
-                    <Typography.Link onClick={() => handleClick('block2')}>
+                    <Typography.Link className="header-link" onClick={() => handleClick('block2')}>
                         Учительству
                     </Typography.Link>
-                    <Typography.Link onClick={() => handleClick('block3')}>
+                    <Typography.Link className="header-link" onClick={() => handleClick('block3')}>
                         Учнівству
                     </Typography.Link>
-                    <Typography.Link onClick={() => handleClick('block4')}>
+                    <Typography.Link className="header-link" onClick={() => handleClick('block4')}>
                         Карта інноваторів/ок
                     </Typography.Link>
                 </div>

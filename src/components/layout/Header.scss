@@ -1,50 +1,39 @@
-@import '../../assets/scss/variables.scss';
-
 .header {
-  min-height: 100px;
+  display: flex;
+  justify-content: flex-end;
   align-items: center;
-  background-color: white;
-  padding: 30px 120px;
-  z-index: 2;
+  background-color: #FFFFFF;
+  padding: 0 45px;
+  height: 109px;
 
-  .header-title {
-    margin: 0;
-    a {
-      color: $primary;
-    }
-    font-weight: bold;
-  }
-
-  .header-tabs > * {
+  .header-content {
+    width: 100%;
     display: flex;
-  }
-
-  .header-tabs a {
-    font-size: 20px;
-    line-height: 0;
-  }
-
-  .user-header {
-    color: $primary;
-
-    span {
-      margin-right: 8px;
-    }
-  }
-
-  .fav-section {
-    display: flex;
-    gap: 6px;
+    justify-content: flex-end;
     align-items: center;
-
-    > span {
-      color: $primary;
-    }
   }
 
-  .header-fav {
-    width: 22px;
-    height: 20px;
-    cursor: pointer;
+  .header-links {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 135px;
+  }
+
+  .header-link {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19.12px;
+    color: #1B1B1B;
+    margin-left: 24px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:hover {
+      color: #1B1B1B;
+    }
   }
 }
