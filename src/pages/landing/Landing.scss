@@ -250,6 +250,8 @@ h2 {
  }
 
  a {
+   color: #1B1B1B;
+
    &:hover {
      color: #1B1B1B;
    }
@@ -294,6 +296,19 @@ h2 {
 
  .text-together {
    white-space: nowrap
+ }
+
+ .circle-div {
+   text-align: center;
+ }
+
+ .circle {
+   display: inline-block;
+   width: 10px;
+   height: 10px;
+   border-radius: 50%;
+   background-color: #E9FA93;
+   margin: 25px 7px;
  }
 
  // fifth block
@@ -509,94 +524,235 @@ h2 {
 
  /* Mobile Styles */
  @media screen and (max-width: 767px) {
-   /* General adjustments */
+   /* General adjustments and first block*/
    .block-first, .block-third, .block-fourth, .block-sixth, .block-eight {
      width: 100%;
-     border-radius: 20px;
+     border-radius: 30px;
    }
 
-   .block-second, .block-fifth, .block-seventh {
-     flex-direction: column;
-     height: auto;
+   .block-first{
+     width: 340px;
+     height: 706px;
+     margin: 0 auto;
+     border-radius: 30px;
    }
 
-   /* First block */
-   .block-first-text-article, .block-first-text-main {
-     padding-left: 20px;
-     padding-right: 20px;
-     font-size: 28px;
-     line-height: 42px;
+   .block-first-text-article {
+     font-weight: 500;
+     font-size: 22px;
+     line-height: 35px;
+     text-align: center;
+     padding: 50px 20px 0 20px;
+   }
+
+   .block-first-text-main {
+     font-weight: 500;
+     font-size: 14px;
+     line-height: 22px;
+     text-align: center;
+     color: #1B1B1B;
+     padding: 25px 20px 0 20px;
+
+     margin: 0;
+   }
+
+   .button-text {
+     width: 221px;
+     font-weight: 500;
+     line-height: 23px;
+     text-align: center;
+     margin-left: 0;
    }
 
    button {
-     margin: 27px auto;
+     margin: 45px auto 0;
+     padding: 20px 10px;
+     width: 241px;
+     height: 63px;
+     border: none;
    }
 
    .text-after-button {
-     gap: 20px;
-     font-size: 12px;
-     line-height: 18px;
+     display: block;
+     font-size: 11px;
+     line-height: 15px;
+     margin-top: -122px;
+     padding-left: 0;
+   }
+
+   .text-after-button-second {
+     margin-top: 93px;
    }
 
    /* Second block */
-   .first-block, .second-block, .fifth-block, .seventh-first-block, .seventh-second-block {
-     width: 100%;
-     margin-bottom: 40px;
+   .block-second, .block-fifth, .block-seventh {
+     flex-direction: column;
+     height: auto;
+     margin: 85px auto;
+     width: 340px;
+     border-radius: 30px;
+   }
+
+   .block-second {
+     width: 340px;
+   }
+
+   .first-block {
+     width: 340px;
+     height: 641px;
+   }
+
+   .second-block {
+     height: 386px;
+     width: 340px;
    }
 
    h2 {
-     font-size: 28px;
-     line-height: 40px;
+     font-weight: 500;
+     font-size: 24px;
+     line-height: 33px;
+     margin-top: 45px;
+     margin-left: 21px;
    }
 
-   .text-inside-first-block, .text-inside-fifth-block, .text-inside-seventh-block {
-     font-size: 16px;
-     line-height: 26px;
+   .text-inside-first-block {
+     font-weight: 400;
+     font-size: 15px;
+     line-height: 24px;
+     margin: 25px 36px 0 21px;
    }
 
    /* Third block */
-   .third-block-main-text {
-     margin-left: 20px;
-     width: 100px;
+   .block-third {
+     height: auto;
+     margin: 0 auto;
+     padding-bottom: 45px;
+     width: 340px;
+     align-content: center;
+     display: flex;
+     flex-direction: column;
    }
 
-   .column {
-     padding-right: 20px;
+   .third-block-main-text {
+     font-weight: 500;
+     font-size: 24px;
+     line-height: 160%;
+     margin: 0 auto;
+
+     padding-top: 45px;
+     padding-left: 20px;
+     width: 300px;
+     text-align: left;
    }
 
    .img-second {
-     width: 100px;
-     height: 100px;
+     width: 132px;
+     height: 132px;
+     border-radius: 20px;
+
+     padding-top: 0;
+     margin-top: 20px;
+     margin-left: 20px;
    }
 
    .numbers {
-     font-size: 28px;
-     line-height: 40px;
+     font-size: 25px;
+     line-height: 34px;
+
+     padding-top: 0;
+     margin-top: 35px;
+     margin-bottom: 0;
+     margin-left: 20px;
+     text-align: left;
    }
 
    .steps {
-     font-size: 16px;
-     line-height: 26px;
+     padding-top: 0;
+     margin-top: 20px;
+     margin-left: 20px;
+     text-align: left;
+     width: 265px;
+
+     font-size: 15px;
+     line-height: 24px;
    }
 
-   .steps-third {
-     margin-right: 20px;
+   .steps-first {
+     width: 150px;
    }
 
    /* Fourth block */
-   .cards {
+   .block-fourth {
+     margin: 85px auto;
+     height: 606px;
+     width: 340px;
+   }
+
+   .fourth-block-text {
+     font-weight: 500;
+     font-size: 24px;
+     line-height: 160%;
+
      margin-left: 20px;
-     margin-right: 20px;
+     padding-top: 45px;
+     padding-left: 0;
+   }
+
+   .cards {
+     margin-left: 37px;
+     margin-right: 37px;
+
+     margin-top: 40px;
+     height: 326px;
+   }
+
+   .card-text {
+     margin: -5px 32px;
+   }
+   .circle {
+     width: 10px;
+     height: 10px;
+     margin: 25px 7px;
    }
 
    /* Fifth block */
+
+   .fifth-block {
+     width: 340px;
+     background-color: #F5F5F5;
+     border-radius: 30px;
+   }
+
+   .fifth-block-text {
+     padding-bottom: 45px;
+   }
+
+   .text-inside-fifth-block {
+     font-size: 15px;
+     line-height: 160%;
+     margin: 25px 37px 0 20px;
+     text-align: left;
+
+     flex: none;
+     order: 0;
+     flex-grow: 0;
+   }
+
    .first-article {
-     margin-top: 40px;
+     margin-top: 45px;
    }
 
    /* Sixth block */
+
+   .block-sixth {
+     margin: 85px auto;
+     width: 340px;
+     border-radius: 30px;
+     height: auto;
+   }
+
    .sixth-block {
-     width: 100%;
+     width: 300px;
    }
 
    .lesson-plan-body {
@@ -604,50 +760,93 @@ h2 {
    }
 
    .certificate-text {
-     margin-right: 20px;
+     width: 300px;
+     font-weight: 400;
+     font-size: 15px;
+     line-height: 24px;
+
+     text-align: left;
+     margin-left: 20px;
+     margin-top: 35px;
    }
 
    .lesson-plan-form {
-     margin: 40px 20px 56px;
-     width: 100%;
-     padding: 20px;
+     margin: 45px 20px 45px;
+     width: 250px;
+
+     height: 583px;
+     border-radius: 25px;
+     padding: 46px 25px 0 25px;
    }
 
    input {
-     width: 100%;
+     width: 95%;
+   }
+
+   .form-text {
+     font-size: 13px;
+     line-height: 18px;
+     margin-bottom: 20px;
    }
 
    /* Seventh block */
+
+   .block-seventh {
+     gap: 85px;
+   }
+
+   .seventh-first-block {
+     width: 340px;
+     border-radius: 30px;
+     padding-bottom: 100px;
+   }
+
    .mapArticle {
+     padding-bottom: 0;
      font-size: 24px;
-     line-height: 36px;
+     line-height: 38px;
    }
 
-   /* Eighth block */
-   .cards-second {
-     margin-left: 20px;
-     margin-right: 20px;
+   .text-inside-seventh-block {
+     width: 260px;
    }
 
-   .main-text {
-     width: 200px;
+   .seventh-second-block {
+     width: 340px;
+     height: 340px;
+     border-radius: 30px;
+     background-color: #F5F5F5;
+     display: flex;
+     align-items: center;
    }
 
    .img-seventh {
-     width: 100px;
-     height: 100px;
+     width: 340px;
+     margin: auto;
    }
 
-   .steps-third {
-     width: 100px;
+   /* Eighth block */
+
+   .block-eight {
+     align-content: center;
+     margin: 85px auto;
+     display: block;
+     border-radius: 30px;
+
+     width: 340px;
+     height: 430px;
    }
 
-   .steps-second {
-     width: 50px;
+   .cards-second {
+     margin-left: 53px;
+     margin-right: 54px;
+     height: 185px;
    }
 
-   .steps-first {
-     width: 50px;
+   .main-text {
+     width: 316px;
+     font-weight: 500;
+     font-size: 25px;
+     line-height: 160%;
    }
-
  }
