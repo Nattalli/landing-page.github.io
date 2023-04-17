@@ -32,6 +32,8 @@ import {
 
 export default function Landing() {
 
+    const isDesktop = window.innerWidth > 768;
+
     const handleClick = (id: string) => {
         const element = document.getElementById(id);
         if (element) {
@@ -70,7 +72,7 @@ export default function Landing() {
               </p>
               <p className="text-after-button">
                   <p>та хочу взяти участь у конкурсі</p>
-                  <p>та хочу залучити учнівство до конкурсу</p>
+                  <p className="text-after-button-second">та хочу залучити учнівство до конкурсу</p>
               </p>
           </div>
 
@@ -96,6 +98,8 @@ export default function Landing() {
               <p className="block-first-text-article third-block-main-text">
                   Як взяти участь у конкурсі Та виграти подарунок?
               </p>
+
+              {isDesktop ? (
 
               <div className="row">
                   <div className="column">
@@ -166,6 +170,31 @@ export default function Landing() {
                       </div>
                   </div>
               </div>
+              ) :
+              <div>
+                  <div className="numbers">1.</div>
+                  <a href="https://t.me/SashaLookingForAnswers_bot" target="_blank" rel="noreferrer">
+                      <p className="steps steps-first">
+                          {participationInTheCompetitionFirstStep}
+                      </p>
+                  </a>
+                  <div className="box">
+                      <img className="img-second" src={SecondImage} alt="QR code"/>
+                  </div>
+
+                  <div className="numbers">2.</div>
+                  <p className="steps steps-second">
+                      {participationInTheCompetitionSecondStep}
+                  </p>
+
+                  <div className="numbers">3.</div>
+                  <div className="box">
+                      <p className="steps steps-third">{participationInTheCompetitionThirdStep}</p>
+                  </div>
+
+              </div>
+
+              }
           </div>
 
           <div className="block-fourth">
@@ -173,7 +202,6 @@ export default function Landing() {
                   Учасники та учасниці конкурсу можуть виграти:
               </p>
               <div className="cards">
-                  <div className="cards-inside"></div>
                   <div className="card">
                       <img src={FirstPresent} alt="Зображення 1" className="card-image"/>
                           <p className="card-text">Набір шкарпеток від українського бренду&nbsp;
@@ -224,6 +252,23 @@ export default function Landing() {
                   </div>
                   <div className="cards-inside"></div>
               </div>
+              {isDesktop?
+                  (<div className="circle-div">
+                      <span className="circle"></span>
+                      <span className="circle"></span>
+                      <span className="circle"></span>
+                      <span className="circle"></span>
+                  </div>)
+                  :
+                  (<div className="circle-div">
+                      <span className="circle"></span>
+                      <span className="circle"></span>
+                      <span className="circle"></span>
+                      <span className="circle"></span>
+                      <span className="circle"></span>
+                      <span className="circle"></span>
+                  </div>)
+              }
           </div>
 
           <div>
@@ -232,29 +277,54 @@ export default function Landing() {
               </p>
           </div>
 
-          <div className="block-fifth">
-              <div className="fifth-block">
-                  <img className="img-fifth" src={FifthImage}  alt="Block image"/>
+          {isDesktop ? (
+
+              <div className="block-fifth">
+                  <div className="fifth-block">
+                      <img className="img-fifth" src={FifthImage}  alt="Block image"/>
+                  </div>
+                  <div className="fifth-block">
+                      <p className="text-inside-fifth-block first-article">
+                          {aboutSashaFirstPart}
+                      </p>
+                      <p className="text-inside-fifth-block">
+                          {aboutSashaSecondPart}
+                      </p>
+                      <p className="text-inside-fifth-block">
+                          {aboutSashaThirdPart}
+                      </p>
+                      <p className="text-inside-fifth-block">
+                          {aboutSashaFourthPart}
+                      </p>
+                  </div>
               </div>
-              <div className="fifth-block">
-                  <p className="text-inside-fifth-block first-article">
-                      {aboutSashaFirstPart}
-                  </p>
-                  <p className="text-inside-fifth-block">
-                      {aboutSashaSecondPart}
-                  </p>
-                  <p className="text-inside-fifth-block">
-                      {aboutSashaThirdPart}
-                  </p>
-                  <p className="text-inside-fifth-block">
-                      {aboutSashaFourthPart}
-                  </p>
+
+          ) : (
+
+              <div className="block-fifth">
+                  <div className="fifth-block fifth-block-text">
+                      <p className="text-inside-fifth-block first-article">
+                          {aboutSashaFirstPart}
+                      </p>
+                      <p className="text-inside-fifth-block">
+                          {aboutSashaSecondPart}
+                      </p>
+                      <p className="text-inside-fifth-block">
+                          {aboutSashaThirdPart}
+                      </p>
+                      <p className="text-inside-fifth-block">
+                          {aboutSashaFourthPart}
+                      </p>
+                  </div>
+                  <div className="fifth-block">
+                      <img className="img-fifth" src={FifthImage}  alt="Block image"/>
+                  </div>
               </div>
-          </div>
+          )}
 
 
           <div className="block-sixth" id="for-teachers">
-              <div className="lesson-plan-header">
+              <div>
                   <p className="fourth-block-text sixth-block">{formTitle}</p>
               </div>
               <div className="lesson-plan-body">
@@ -327,6 +397,18 @@ export default function Landing() {
                   </div>
                   <div className="cards-inside-second"></div>
               </div>
+              {isDesktop?
+                  null
+                  :
+                  (<div className="circle-div">
+                      <span className="circle"></span>
+                      <span className="circle"></span>
+                      <span className="circle"></span>
+                      <span className="circle"></span>
+                      <span className="circle"></span>
+                      <span className="circle"></span>
+                  </div>)
+              }
           </div>
 
       </div>
