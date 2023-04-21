@@ -41,6 +41,41 @@ export default function Landing() {
         }
     };
 
+
+    const sentToGoogleSheet = () => {
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzaS8w2NKVSdX5Oux1d7hl2dtfEaY_Km-wj2Uv_TP9AlCKRj_GRhcV-BCRSFiv71VPi/exec';
+
+    const form = document.getElementById('google-sheet-form') as HTMLFormElement;
+    const message = document.getElementById('message');
+
+    form?.addEventListener('submit', e => {
+    e.preventDefault();
+
+    fetch(scriptURL, { method: 'POST', body: new FormData(form as HTMLFormElement) })
+        .then(response => {
+            console.log('Success!', response);
+            form.reset();
+
+            if (message) {
+                message.innerHTML = "Form submitted successfully!";
+                message.style.display = "block";
+                setTimeout(() => {
+                    message.style.display = "none";
+                }, 3000);
+            }
+        })
+        .catch(error => {
+            if (message) {
+                message.innerHTML = "Error submitting the form.";
+                message.style.display = "block";
+                setTimeout(() => {
+                    message.style.display = "none";
+                }, 3000);
+            }
+        });
+    });
+    };
+
     return (
       <div>
           <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -329,20 +364,21 @@ export default function Landing() {
               </div>
               <div className="lesson-plan-body">
                   <p className="certificate-text">{textForm}</p>
-                  <form className="lesson-plan-form">
+                  <form className="lesson-plan-form" id="google-sheet-form">
                       <label htmlFor="name" className="form-text form-text-first">Ваше ім’я та прізвище</label>
-                      <input type="text" id="name" name="name" required/>
+                      <input type="text" id="name" name="Ім'я та прізвище" required/>
 
                       <label htmlFor="school" className="form-text">Яку школу ви представляєте?</label>
-                      <input type="text" id="school" name="school" required/>
+                      <input type="text" id="school" name="Яку школу представляє" required/>
 
                       <label htmlFor="address" className="form-text">Вкажіть, будь ласка, назву та адресу школи</label>
-                      <input type="text" id="address" name="address" required/>
+                      <input type="text" id="address" name="Назва і адреса школи" required/>
 
                       <label htmlFor="email" className="form-text">Вкажіть вашу електронну адресу, щоб ми надіслали вам план уроку</label>
-                      <input type="email" id="email" name="email" required/>
+                      <input type="email" id="email" name="Електронна адреса" required/>
+                      <div id="message" className="display: none;"></div>
 
-                      <button type="submit">Відправити</button>
+                      <button type="submit" onClick={sentToGoogleSheet}>Відправити</button>
                   </form>
               </div>
           </div>
