@@ -16,7 +16,7 @@ export default function Footer() {
                 <div className="footer-right-contacts footer-text">
                     Контакти: <a href="tel:+380955871367" className="footer-right-text footer-text">+380955871367</a>
                 </div>
-                <div className="footer-right-text-contacts footer-text">
+                <div className="footer-right-contacts footer-text">
                     Якщо у вас є скарги чи пропозиції: <a href="mailto:sashalookingforanswers@gmail.com" className="footer-link">sashalookingforanswers@gmail.com</a>
                 </div>
             </div>

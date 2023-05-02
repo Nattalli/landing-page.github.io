@@ -19,14 +19,20 @@ import SixthPartner from '../../assets/img/partner-6.png'
 import {
     aboutCompetitionFirstPart,
     aboutCompetitionSecondPart,
-    aboutCompetitionThirdPart, aboutSashaFirstPart, aboutSashaFourthPart, aboutSashaSecondPart, aboutSashaThirdPart,
+    aboutCompetitionThirdPart,
+    aboutSashaFifthPart,
+    aboutSashaFirstPart,
+    aboutSashaFourthPart,
+    aboutSashaSecondPart,
+    aboutSashaThirdPart, aboutSashaTitle,
     aboutUs,
     aboutUsSecondPart,
-    formTitle, mapText,
+    formTitle,
+    mapText,
     participationInTheCompetitionFirstStep,
     participationInTheCompetitionSecondStep,
     participationInTheCompetitionThirdStep,
-    textForm
+    textForm, textFormSecond, textFormThird
 } from "./landingTextConstants";
 
 
@@ -46,7 +52,6 @@ export default function Landing() {
     const scriptURL = 'https://script.google.com/macros/s/AKfycbzaS8w2NKVSdX5Oux1d7hl2dtfEaY_Km-wj2Uv_TP9AlCKRj_GRhcV-BCRSFiv71VPi/exec';
 
     const form = document.getElementById('google-sheet-form') as HTMLFormElement;
-    const message = document.getElementById('message');
 
     form?.addEventListener('submit', e => {
     e.preventDefault();
@@ -55,23 +60,9 @@ export default function Landing() {
         .then(response => {
             console.log('Success!', response);
             form.reset();
-
-            if (message) {
-                message.innerHTML = "Form submitted successfully!";
-                message.style.display = "block";
-                setTimeout(() => {
-                    message.style.display = "none";
-                }, 3000);
-            }
         })
         .catch(error => {
-            if (message) {
-                message.innerHTML = "Error submitting the form.";
-                message.style.display = "block";
-                setTimeout(() => {
-                    message.style.display = "none";
-                }, 3000);
-            }
+            console.error('Error!', error.message);
         });
     });
     };
@@ -131,7 +122,7 @@ export default function Landing() {
 
           <div className="block-third" id="for-students">
               <p className="block-first-text-article third-block-main-text">
-                  Як взяти участь у конкурсі Та виграти подарунок?
+                  ЯК ВЗЯТИ УЧАСТЬ В УРОЦІ-ОПИТУВАННІ ПРО ПРАВА ДІВЧАТ ТА ВИГРАТИ ПОДАРУНОК?
               </p>
 
               {isDesktop ? (
@@ -142,18 +133,14 @@ export default function Landing() {
                           <div className="row">
                               <div className="column">
                                   <div className="box">
+                                      <div className="row">
                                       <p className="numbers">1.</p>
-                                  </div>
-                              </div>
-                          </div>
-                          <div className="row">
-                              <div className="column">
-                                  <div className="box">
                                       <a href="https://t.me/SashaLookingForAnswers_bot" target="_blank" rel="noreferrer">
                                         <p className="steps steps-first">
                                             {participationInTheCompetitionFirstStep}
                                         </p>
                                       </a>
+                                      </div>
                                   </div>
                               </div>
                           </div>
@@ -171,16 +158,12 @@ export default function Landing() {
                           <div className="row">
                               <div className="column">
                                   <div className="box">
-                                      <p className="numbers">2.</p>
-                                  </div>
-                              </div>
-                          </div>
-                          <div className="row">
-                              <div className="column">
-                                  <div className="box">
-                                      <p className="steps steps-second">
-                                          {participationInTheCompetitionSecondStep}
-                                      </p>
+                                      <div className="row">
+                                          <p className="numbers">2.</p>
+                                          <p className="steps steps-second">
+                                              {participationInTheCompetitionSecondStep}
+                                          </p>
+                                      </div>
                                   </div>
                               </div>
                           </div>
@@ -191,14 +174,10 @@ export default function Landing() {
                           <div className="row">
                               <div className="column">
                                   <div className="box">
-                                      <p className="numbers">3.</p>
-                                  </div>
-                              </div>
-                          </div>
-                          <div className="row">
-                              <div className="column">
-                                  <div className="box">
-                                      <p className="steps steps-third">{participationInTheCompetitionThirdStep}</p>
+                                      <div className="row">
+                                          <p className="numbers">3.</p>
+                                          <p className="steps steps-third">{participationInTheCompetitionThirdStep}</p>
+                                      </div>
                                   </div>
                               </div>
                           </div>
@@ -234,7 +213,7 @@ export default function Landing() {
 
           <div className="block-fourth">
               <p className="fourth-block-text">
-                  Учасники та учасниці конкурсу можуть виграти:
+                  УЧАСНИЦІ ТА УЧАСНИКИ УРОКУ- ОПИТУВАННЯ ЗМОЖУТЬ ВИГРАТИ:
               </p>
               <div className="cards">
                   <div className="card">
@@ -269,19 +248,11 @@ export default function Landing() {
                               </a>
                           </p>
                   </div>
-                  <div className="card">
+                  <div className="card last-card">
                       <img src={FifthPresent} alt="Зображення 5" className="card-image"/>
                           <p className="card-text">Твіллі від українського бренду&nbsp;
                               <a href="https://www.instagram.com/oliz_brand/?igshid=YmMyMTA2M2Y%3D" target="_blank" rel="noreferrer">
                                   OLIZ
-                              </a>
-                          </p>
-                  </div>
-                  <div className="card last-card">
-                      <img src={SIXTHPresent} alt="Зображення 6" className="card-image"/>
-                          <p className="card-text">Сертифікат на&nbsp;
-                              <a href="https://takflix.com/uk" target="_blank" rel="noreferrer">
-                                  Takflix
                               </a>
                           </p>
                   </div>
@@ -308,7 +279,7 @@ export default function Landing() {
 
           <div>
               <p className="main-text">
-                  Чат-бот «Саша шукає відповіді» стартує <strong className="text-together">21 березня о 8:30.</strong> Саша чекає на тебе!
+                  Чат-бот «Саша шукає відповіді» стартує  <strong>ЩОРОКУ 8 БЕРЕЗНЯ.</strong> Саша чекає на тебе!
               </p>
           </div>
 
@@ -319,7 +290,8 @@ export default function Landing() {
                       <img className="img-fifth" src={FifthImage}  alt="Block image"/>
                   </div>
                   <div className="fifth-block">
-                      <p className="text-inside-fifth-block first-article">
+                      <p className="new-text">{aboutSashaTitle}</p>
+                      <p className="text-inside-fifth-block">
                           {aboutSashaFirstPart}
                       </p>
                       <p className="text-inside-fifth-block">
@@ -330,6 +302,9 @@ export default function Landing() {
                       </p>
                       <p className="text-inside-fifth-block">
                           {aboutSashaFourthPart}
+                      </p>
+                      <p className="text-inside-fifth-block">
+                          {aboutSashaFifthPart}
                       </p>
                   </div>
               </div>
@@ -339,6 +314,9 @@ export default function Landing() {
               <div className="block-fifth">
                   <div className="fifth-block fifth-block-text">
                       <p className="text-inside-fifth-block first-article">
+                          {aboutSashaTitle}
+                      </p>
+                      <p className="text-inside-fifth-block first-article">
                           {aboutSashaFirstPart}
                       </p>
                       <p className="text-inside-fifth-block">
@@ -349,6 +327,9 @@ export default function Landing() {
                       </p>
                       <p className="text-inside-fifth-block">
                           {aboutSashaFourthPart}
+                      </p>
+                       <p className="text-inside-fifth-block">
+                          {aboutSashaFifthPart}
                       </p>
                   </div>
                   <div className="fifth-block">
@@ -363,7 +344,12 @@ export default function Landing() {
                   <p className="fourth-block-text sixth-block">{formTitle}</p>
               </div>
               <div className="lesson-plan-body">
-                  <p className="certificate-text">{textForm}</p>
+                  <p className="certificate-text">
+                      <p className="certificate-text certificate-text-title">{textForm}</p>
+                      <p className="certificate-text next-lines">{textFormSecond}</p>
+                      <p className="certificate-text next-lines">{textFormThird}</p>
+                  </p>
+
                   <form className="lesson-plan-form" id="google-sheet-form">
                       <label htmlFor="name" className="form-text form-text-first">Ваше ім’я та прізвище</label>
                       <input type="text" id="name" name="Ім'я та прізвище" required/>
@@ -414,11 +400,6 @@ export default function Landing() {
                   <div className="card-second">
                       <a href="https://www.creativewomenpublishing.com.ua/" target="_blank" rel="noreferrer">
                           <img src={ThirdPartner} alt="Зображення 3" className="card-image-second"/>
-                      </a>
-                  </div>
-                  <div className="card-second">
-                      <a href="https://takflix.com/uk" target="_blank" rel="noreferrer">
-                          <img src={FourthPartner} alt="Зображення 4" className="card-image-second"/>
                       </a>
                   </div>
                   <div className="card-second">

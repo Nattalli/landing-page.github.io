@@ -1,3 +1,9 @@
+ @import '../../fonts.css';
+
+ body {
+  font-family: 'Manrope', sans-serif;
+}
+
  // first block
 .block-first {
   width: 1316px;
@@ -11,7 +17,7 @@
 
 .block-first-text-article {
   display: flex;
-  padding: 50px 138px 0;
+  padding: 50px 93px 0;
   margin: 0 auto;
   flex-direction: column;
   align-items: center;
@@ -26,13 +32,13 @@
 
 .block-first-text-main {
   display: flex;
-  padding: 40px 452px;
+  padding: 40px 351px;
   margin: 0 auto;
   flex-direction: column;
   align-items: center;
   font-weight: 500;
-  font-size: 18px;
-  line-height: 28.8px;
+  font-size: 23px;
+  line-height: 36.8px;
   color: #1B1B1B;
   text-align: center;
   font-style: normal;
@@ -40,11 +46,11 @@
 
 button {
   display: inline-block;
-  margin: 27px 55px 0 55px;
+  margin: 27px 73.5px 0 73.5px;
   background: #ECFB9E;
   border-radius: 50px;
   height: 75px;
-  left: 395px;
+  left: 406px;
   border: none;
 }
 
@@ -54,7 +60,8 @@ button {
   line-height: 25px;
 
   color: #4F4F4F;
-  margin: 0 15px;
+  margin: 0 58px;
+  width: 120px;
 }
 
 p {
@@ -64,13 +71,13 @@ p {
 .text-after-button {
   display: flex;
   justify-content: center;
-  gap: 114px;
+  gap: 147px;
 
   margin-top: -20px;
-  padding-left: 25px;
+  padding-left: 35px;
   font-weight: 500;
-  font-size: 15px;
-  line-height: 20.5px;
+  font-size: 17px;
+  line-height: 23px;
   color: #1B1B1B;
 }
 
@@ -80,7 +87,7 @@ p {
   display: flex;
   justify-content: center;
   gap: 40px;
-  height: 738px;
+  height: 886px;
 }
 
 .first-block {
@@ -119,7 +126,7 @@ h2 {
   font-size: 20px;
   line-height: 160%;
   color: #1B1B1B;
-  margin: 35px 52px 0 60px;
+  margin: 35px 41px 0 60px;
   text-align: left;
 
   flex: none;
@@ -135,14 +142,13 @@ h2 {
    margin: 100px auto;
    display: block;
    border-radius: 40px;
-   height: 572px;
+   height: 517px;
  }
 
  .third-block-main-text {
    margin-left: 60px;
    padding-top: 60px;
    padding-left: 0;
-   width: 1032px;
    text-align: left;
  }
 
@@ -157,13 +163,13 @@ h2 {
  }
 
 .img-second {
-  width: 186px;
-  height: 186px;
+  width: 151px;
+  height: 151px;
   border-radius: 20px;
 
   padding-top: 0;
-  margin-top: 35px;
-  margin-left: 60px;
+  margin-top: 32px;
+  margin-left: 108px;
 }
 
 .numbers {
@@ -181,8 +187,8 @@ h2 {
 
 .steps {
   padding-top: 0;
-  margin-top: 30px;
-  margin-left: 60px;
+  margin-top: 45px;
+  margin-left: 20px;
   text-align: left;
 
   width: 204px;
@@ -199,13 +205,17 @@ h2 {
    text-decoration-line: underline;
  }
 
+ .steps-first:hover {
+   color: #a0eae8;
+ }
+
  .steps-second {
    width: 358px;
  }
 
  .steps-third {
-   width: 379px;
-   margin-right: 86px;
+   width: 359px;
+   margin-right: 77px;
  }
 
  //block fourth
@@ -275,13 +285,12 @@ h2 {
    flex-direction: column;
    font-weight: 500;
    font-size: 35px;
-   line-height: 56px;
+   line-height: 48px;
    color: #1B1B1B;
    text-transform: uppercase;
-   margin-left: 60px;
    padding-top: 60px;
    padding-left: 0;
-   text-align: left;
+   text-align: center;
  }
 
  .main-text {
@@ -313,11 +322,11 @@ h2 {
 
  // fifth block
  .block-fifth {
-   margin-top: 84px;
+   margin-top: 100px;
    display: flex;
    justify-content: center;
    gap: 41px;
-   height: 865px;
+   height: 909px;
  }
 
  .fifth-block {
@@ -336,7 +345,7 @@ h2 {
    font-size: 20px;
    line-height: 32px;
    color: #1B1B1B;
-   margin: 35px 28px 0 60px;
+   margin: 35px 35px 0 60px;
    text-align: left;
 
    flex: none;
@@ -348,6 +357,14 @@ h2 {
    margin-top: 60px;
  }
 
+ .new-text {
+   font-weight: 500;
+   font-size: 22px;
+   line-height: 160%;
+   margin: 60px 28px 0 60px;
+   text-align: left;
+ }
+
  // sixth block
  .block-sixth {
    width: 1316px;
@@ -356,12 +373,15 @@ h2 {
    margin: 100px auto;
    display: block;
    border-radius: 40px;
-   height: 963px;
+   height: 986px;
  }
 
  .sixth-block {
-   width: 1151px;
+   width: 1123px;
    margin-bottom: 0;
+   margin-left: 60px;
+   text-align: left;
+   text-transform: none;
  }
 
  .lesson-plan-body {
@@ -370,38 +390,49 @@ h2 {
  }
 
  .certificate-text {
-   width: 379px;
    font-weight: 400;
-   font-size: 20px;
+   font-size: 22px;
    line-height: 160%;
    color: #1B1B1B;
    text-align: left;
    margin-left: 60px;
+   margin-right: -70px;
    margin-top: 40px;
+ }
+
+ .certificate-text-title {
+   margin-left: 0;
+   margin-top: 0;
+   white-space: nowrap;
+ }
+
+ .next-lines {
+   margin-left: 0;
+   width: 379px;
+   font-size: 20px;
  }
 
  .lesson-plan-form {
    width: 718px;
-   height: 583px;
    background: #FCFCFC;
    box-shadow: 0 3px 9px rgba(0, 0, 0, 0.1);
    border-radius: 30px;
-   margin: 40px 86px 56px;
-   padding: 59px 59px 0 59px;
+   margin: 115px 86px 60px;
+   padding: 59px 59px 0 56px;
  }
 
  .lesson-plan-form label,
  .lesson-plan-form input {
    display: block;
    margin-bottom: 10px;
-   font-size: 16px;
+   font-size: 18px;
  }
 
  .lesson-plan-form button {
    display: block;
    margin: 70px auto;
    font-size: 18px;
-   font-weight: 500;
+   font-weight: 600;
    line-height: 25px;
    color: #4F4F4F;
    border: none;
@@ -475,7 +506,7 @@ h2 {
  }
 
  .text-inside-seventh-block {
-   margin: 40px auto;
+   margin: 40px 55px 0 60px;
    width: 310px;
  }
 
@@ -489,7 +520,7 @@ h2 {
 
    width: 1316px;
    height: 395px;
-   background-color: #D5D2F980;
+   //background-color: #D5D2F980;
  }
 
  .cards-second {
@@ -505,14 +536,14 @@ h2 {
  .cards-second::-webkit-scrollbar { width: 0; }
 
  .card-second {
-   //background-color: #FCFCFC;
+   background-color: #FCFCFC;
    margin-right: 80px;
-   //box-shadow: 0 3px 9px rgba(0, 0, 0, 0.1);
    border-radius: 25px;
  }
 
  .last-card-second {
    margin-right: 0;
+    background-color: #FCFCFC;
  }
 
  .card-image-second {
