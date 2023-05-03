@@ -6,28 +6,65 @@ import SecondPresent from '../../assets/img/prezent-2.png'
 import ThirdPresent from '../../assets/img/prezent-3.png'
 import FourthPresent from '../../assets/img/prezent-4.png'
 import FifthPresent from '../../assets/img/prezent-5.png'
-import SIXTHPresent from '../../assets/img/prezent-6.png'
 import FifthImage from '../../assets/img/fifth-image.png'
-import SeventhImage from '../../assets/img/seventh-image.png'
 import FirstPartner from '../../assets/img/partner-1.png'
 import SecondPartner from '../../assets/img/partner-2.png'
 import ThirdPartner from '../../assets/img/partner-3.png'
 import FourthPartner from '../../assets/img/partner-4.png'
 import FifthPartner from '../../assets/img/partner-5.png'
 import SixthPartner from '../../assets/img/partner-6.png'
+import { MapContainer, Marker, Popup, TileLayer, useMap } from 'react-leaflet';
+import 'leaflet/dist/leaflet.css';
+import { LatLngTuple } from 'leaflet';
+import { icon } from 'leaflet';
+
 
 import {
     aboutCompetitionFirstPart,
     aboutCompetitionSecondPart,
-    aboutCompetitionThirdPart, aboutSashaFirstPart, aboutSashaFourthPart, aboutSashaSecondPart, aboutSashaThirdPart,
+    aboutCompetitionThirdPart,
+    aboutSashaFifthPart,
+    aboutSashaFirstPart,
+    aboutSashaFourthPart,
+    aboutSashaSecondPart,
+    aboutSashaThirdPart,
+    aboutSashaTitle,
     aboutUs,
     aboutUsSecondPart,
-    formTitle, mapText,
+    formTitle,
+    mapText,
     participationInTheCompetitionFirstStep,
     participationInTheCompetitionSecondStep,
     participationInTheCompetitionThirdStep,
-    textForm
+    textForm,
+    textFormSecond,
+    textFormThird
 } from "./landingTextConstants";
+
+function SetMapView() {
+  const map = useMap();
+  map.setView([48.3794, 31.1656], 6);
+  map.setMinZoom(5);
+  map.setMaxZoom(10);
+  return null;
+}
+
+
+const markers: { position: LatLngTuple; title: string }[] = [
+  { position: [49.8419, 24.0315], title: "Львів" },
+  { position: [50.4501, 30.5234], title: "Київ" },
+  { position: [46.4825, 30.7233], title: "Одеса" },
+  // ... інші маркери
+];
+
+const customMarkerIcon = icon({
+  iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
+  iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png',
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41],
+});
 
 
 export default function Landing() {
@@ -46,7 +83,6 @@ export default function Landing() {
     const scriptURL = 'https://script.google.com/macros/s/AKfycbzaS8w2NKVSdX5Oux1d7hl2dtfEaY_Km-wj2Uv_TP9AlCKRj_GRhcV-BCRSFiv71VPi/exec';
 
     const form = document.getElementById('google-sheet-form') as HTMLFormElement;
-    const message = document.getElementById('message');
 
     form?.addEventListener('submit', e => {
     e.preventDefault();
@@ -55,27 +91,42 @@ export default function Landing() {
         .then(response => {
             console.log('Success!', response);
             form.reset();
-
-            if (message) {
-                message.innerHTML = "Form submitted successfully!";
-                message.style.display = "block";
-                setTimeout(() => {
-                    message.style.display = "none";
-                }, 3000);
-            }
         })
         .catch(error => {
-            if (message) {
-                message.innerHTML = "Error submitting the form.";
-                message.style.display = "block";
-                setTimeout(() => {
-                    message.style.display = "none";
-                }, 3000);
-            }
+            console.error('Error!', error.message);
         });
     });
     };
 
+    const scrollCards = (direction: string, toMove: number) => {
+        let container;
+        let scrollAmount;
+        if (toMove === 1) {
+          container = document.querySelector('.cards-second');
+          scrollAmount = 313;
+        } else {
+          container = document.querySelector('.cards');
+          scrollAmount = 302;
+        }
+
+      let newScrollPosition;
+      if (direction === 'left') {
+        // @ts-ignore
+          newScrollPosition = container.scrollLeft - scrollAmount;
+      } else {
+        // @ts-ignore
+          newScrollPosition = container.scrollLeft + scrollAmount;
+      }
+
+      // @ts-ignore
+        container.scrollTo({
+        left: newScrollPosition,
+        behavior: 'smooth'
+      });
+    };
+
+    // @ts-ignore
+    // @ts-ignore
     return (
       <div>
           <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -131,7 +182,7 @@ export default function Landing() {
 
           <div className="block-third" id="for-students">
               <p className="block-first-text-article third-block-main-text">
-                  Як взяти участь у конкурсі Та виграти подарунок?
+                  ЯК ВЗЯТИ УЧАСТЬ В УРОЦІ-ОПИТУВАННІ ПРО ПРАВА ДІВЧАТ ТА ВИГРАТИ ПОДАРУНОК?
               </p>
 
               {isDesktop ? (
@@ -142,18 +193,14 @@ export default function Landing() {
                           <div className="row">
                               <div className="column">
                                   <div className="box">
+                                      <div className="row">
                                       <p className="numbers">1.</p>
-                                  </div>
-                              </div>
-                          </div>
-                          <div className="row">
-                              <div className="column">
-                                  <div className="box">
                                       <a href="https://t.me/SashaLookingForAnswers_bot" target="_blank" rel="noreferrer">
                                         <p className="steps steps-first">
                                             {participationInTheCompetitionFirstStep}
                                         </p>
                                       </a>
+                                      </div>
                                   </div>
                               </div>
                           </div>
@@ -171,16 +218,12 @@ export default function Landing() {
                           <div className="row">
                               <div className="column">
                                   <div className="box">
-                                      <p className="numbers">2.</p>
-                                  </div>
-                              </div>
-                          </div>
-                          <div className="row">
-                              <div className="column">
-                                  <div className="box">
-                                      <p className="steps steps-second">
-                                          {participationInTheCompetitionSecondStep}
-                                      </p>
+                                      <div className="row">
+                                          <p className="numbers">2.</p>
+                                          <p className="steps steps-second">
+                                              {participationInTheCompetitionSecondStep}
+                                          </p>
+                                      </div>
                                   </div>
                               </div>
                           </div>
@@ -191,14 +234,10 @@ export default function Landing() {
                           <div className="row">
                               <div className="column">
                                   <div className="box">
-                                      <p className="numbers">3.</p>
-                                  </div>
-                              </div>
-                          </div>
-                          <div className="row">
-                              <div className="column">
-                                  <div className="box">
-                                      <p className="steps steps-third">{participationInTheCompetitionThirdStep}</p>
+                                      <div className="row">
+                                          <p className="numbers">3.</p>
+                                          <p className="steps steps-third">{participationInTheCompetitionThirdStep}</p>
+                                      </div>
                                   </div>
                               </div>
                           </div>
@@ -234,9 +273,10 @@ export default function Landing() {
 
           <div className="block-fourth">
               <p className="fourth-block-text">
-                  Учасники та учасниці конкурсу можуть виграти:
+                  УЧАСНИЦІ ТА УЧАСНИКИ УРОКУ- ОПИТУВАННЯ ЗМОЖУТЬ ВИГРАТИ:
               </p>
-              <div className="cards">
+            <div className="cards-container">
+              <button className="arrow-left-second" onClick={() => scrollCards('left', 2)}>&lt;</button>              <div className="cards">
                   <div className="card">
                       <img src={FirstPresent} alt="Зображення 1" className="card-image"/>
                           <p className="card-text">Набір шкарпеток від українського бренду&nbsp;
@@ -269,7 +309,7 @@ export default function Landing() {
                               </a>
                           </p>
                   </div>
-                  <div className="card">
+                  <div className="card last-card">
                       <img src={FifthPresent} alt="Зображення 5" className="card-image"/>
                           <p className="card-text">Твіллі від українського бренду&nbsp;
                               <a href="https://www.instagram.com/oliz_brand/?igshid=YmMyMTA2M2Y%3D" target="_blank" rel="noreferrer">
@@ -277,16 +317,11 @@ export default function Landing() {
                               </a>
                           </p>
                   </div>
-                  <div className="card last-card">
-                      <img src={SIXTHPresent} alt="Зображення 6" className="card-image"/>
-                          <p className="card-text">Сертифікат на&nbsp;
-                              <a href="https://takflix.com/uk" target="_blank" rel="noreferrer">
-                                  Takflix
-                              </a>
-                          </p>
-                  </div>
                   <div className="cards-inside"></div>
               </div>
+              <button className="arrow-right-second" onClick={() => scrollCards('right', 2)}>&gt;</button>
+            </div>
+
               {isDesktop?
                   (<div className="circle-div">
                       <span className="circle"></span>
@@ -308,7 +343,7 @@ export default function Landing() {
 
           <div>
               <p className="main-text">
-                  Чат-бот «Саша шукає відповіді» стартує <strong className="text-together">21 березня о 8:30.</strong> Саша чекає на тебе!
+                  Чат-бот «Саша шукає відповіді» стартує  <strong>ЩОРОКУ 8 БЕРЕЗНЯ.</strong> Саша чекає на тебе!
               </p>
           </div>
 
@@ -319,7 +354,8 @@ export default function Landing() {
                       <img className="img-fifth" src={FifthImage}  alt="Block image"/>
                   </div>
                   <div className="fifth-block">
-                      <p className="text-inside-fifth-block first-article">
+                      <p className="new-text">{aboutSashaTitle}</p>
+                      <p className="text-inside-fifth-block">
                           {aboutSashaFirstPart}
                       </p>
                       <p className="text-inside-fifth-block">
@@ -330,6 +366,9 @@ export default function Landing() {
                       </p>
                       <p className="text-inside-fifth-block">
                           {aboutSashaFourthPart}
+                      </p>
+                      <p className="text-inside-fifth-block">
+                          {aboutSashaFifthPart}
                       </p>
                   </div>
               </div>
@@ -339,6 +378,9 @@ export default function Landing() {
               <div className="block-fifth">
                   <div className="fifth-block fifth-block-text">
                       <p className="text-inside-fifth-block first-article">
+                          {aboutSashaTitle}
+                      </p>
+                      <p className="text-inside-fifth-block">
                           {aboutSashaFirstPart}
                       </p>
                       <p className="text-inside-fifth-block">
@@ -349,6 +391,9 @@ export default function Landing() {
                       </p>
                       <p className="text-inside-fifth-block">
                           {aboutSashaFourthPart}
+                      </p>
+                       <p className="text-inside-fifth-block">
+                          {aboutSashaFifthPart}
                       </p>
                   </div>
                   <div className="fifth-block">
@@ -363,7 +408,12 @@ export default function Landing() {
                   <p className="fourth-block-text sixth-block">{formTitle}</p>
               </div>
               <div className="lesson-plan-body">
-                  <p className="certificate-text">{textForm}</p>
+                  <p className="certificate-text">
+                      <p className="certificate-text certificate-text-title">{textForm}</p>
+                      <p className="certificate-text next-lines">{textFormSecond}</p>
+                      <p className="certificate-text next-lines">{textFormThird}</p>
+                  </p>
+
                   <form className="lesson-plan-form" id="google-sheet-form">
                       <label htmlFor="name" className="form-text form-text-first">Ваше ім’я та прізвище</label>
                       <input type="text" id="name" name="Ім'я та прізвище" required/>
@@ -391,16 +441,34 @@ export default function Landing() {
                   </p>
               </div>
               <div className="seventh-second-block">
-                  <img className="img-seventh" src={SeventhImage}  alt="Block image"/>
+                  <MapContainer
+                      className="img-seventh"
+                      style={{ height: '100%', width: '100%', borderRadius: '40px' }}
+                    >
+                      <SetMapView />
+                      <TileLayer
+                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                      />
+                      {markers.map((marker, index) => (
+                        <Marker
+                            icon={customMarkerIcon}
+                            key={`marker-${index}`}
+                            position={marker.position}>
+                          <Popup>{marker.title}</Popup>
+                        </Marker>
+
+                      ))}
+                    </MapContainer>
+                  </div>
               </div>
-          </div>
 
           <div className="block-eight">
               <p className="fourth-block-text sixth-block">
                   Партнери конкурсу у 2023 році:
               </p>
+              <div className="cards-second-container">
+    <button className="arrow-left" onClick={() => scrollCards('left', 1)}>&lt;</button>
               <div className="cards-second">
-                  <div className="cards-inside-second"></div>
                   <div className="card-second">
                       <a href="https://www.instagram.com/horondi/?igshid=YmMyMTA2M2Y%3D" target="_blank" rel="noreferrer">
                           <img src={FirstPartner} alt="Зображення 1" className="card-image-second"/>
@@ -417,7 +485,7 @@ export default function Landing() {
                       </a>
                   </div>
                   <div className="card-second">
-                      <a href="https://takflix.com/uk" target="_blank" rel="noreferrer">
+                      <a href="https://www.dari-mc.com/" target="_blank" rel="noreferrer" className="text-together">
                           <img src={FourthPartner} alt="Зображення 4" className="card-image-second"/>
                       </a>
                   </div>
@@ -433,6 +501,8 @@ export default function Landing() {
                   </div>
                   <div className="cards-inside-second"></div>
               </div>
+<button className="arrow-right" onClick={() => scrollCards('right', 1)}>&gt;</button>
+  </div>
               {isDesktop?
                   null
                   :

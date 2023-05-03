@@ -1,3 +1,9 @@
+@import '../../fonts.css';
+
+body {
+  font-family: 'Manrope', sans-serif;
+}
+
 .header {
   display: flex;
   justify-content: flex-end;
@@ -22,8 +28,8 @@
 
   .header-link {
     font-weight: 400;
-    font-size: 14px;
-    line-height: 19.12px;
+    font-size: 17px;
+    line-height: 23px;
     color: #1B1B1B;
     margin-left: 24px;
 
