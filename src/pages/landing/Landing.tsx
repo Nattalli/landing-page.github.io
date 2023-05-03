@@ -449,7 +449,6 @@ export default function Landing() {
 
                       <label htmlFor="email" className="form-text">Вкажіть вашу електронну адресу, щоб ми надіслали вам план уроку</label>
                       <input type="email" id="email" name="Електронна адреса" required/>
-                      <div id="message" className="display: none;"></div>
 
                       <button type="submit" onClick={sentToGoogleSheet}>Відправити</button>
                   </form>
