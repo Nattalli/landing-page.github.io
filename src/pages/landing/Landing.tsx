@@ -7,12 +7,17 @@ import ThirdPresent from '../../assets/img/prezent-3.png'
 import FourthPresent from '../../assets/img/prezent-4.png'
 import FifthPresent from '../../assets/img/prezent-5.png'
 import FifthImage from '../../assets/img/fifth-image.png'
-import SeventhImage from '../../assets/img/seventh-image.png'
 import FirstPartner from '../../assets/img/partner-1.png'
 import SecondPartner from '../../assets/img/partner-2.png'
 import ThirdPartner from '../../assets/img/partner-3.png'
+import FourthPartner from '../../assets/img/partner-4.png'
 import FifthPartner from '../../assets/img/partner-5.png'
 import SixthPartner from '../../assets/img/partner-6.png'
+import { MapContainer, Marker, Popup, TileLayer, useMap } from 'react-leaflet';
+import 'leaflet/dist/leaflet.css';
+import { LatLngTuple } from 'leaflet';
+import { icon } from 'leaflet';
+
 
 import {
     aboutCompetitionFirstPart,
@@ -22,7 +27,8 @@ import {
     aboutSashaFirstPart,
     aboutSashaFourthPart,
     aboutSashaSecondPart,
-    aboutSashaThirdPart, aboutSashaTitle,
+    aboutSashaThirdPart,
+    aboutSashaTitle,
     aboutUs,
     aboutUsSecondPart,
     formTitle,
@@ -30,8 +36,35 @@ import {
     participationInTheCompetitionFirstStep,
     participationInTheCompetitionSecondStep,
     participationInTheCompetitionThirdStep,
-    textForm, textFormSecond, textFormThird
+    textForm,
+    textFormSecond,
+    textFormThird
 } from "./landingTextConstants";
+
+function SetMapView() {
+  const map = useMap();
+  map.setView([48.3794, 31.1656], 6);
+  map.setMinZoom(5);
+  map.setMaxZoom(10);
+  return null;
+}
+
+
+const markers: { position: LatLngTuple; title: string }[] = [
+  { position: [49.8419, 24.0315], title: "Львів" },
+  { position: [50.4501, 30.5234], title: "Київ" },
+  { position: [46.4825, 30.7233], title: "Одеса" },
+  // ... інші маркери
+];
+
+const customMarkerIcon = icon({
+  iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
+  iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png',
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41],
+});
 
 
 export default function Landing() {
@@ -92,6 +125,8 @@ export default function Landing() {
       });
     };
 
+    // @ts-ignore
+    // @ts-ignore
     return (
       <div>
           <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -406,9 +441,26 @@ export default function Landing() {
                   </p>
               </div>
               <div className="seventh-second-block">
-                  <img className="img-seventh" src={SeventhImage}  alt="Block image"/>
+                  <MapContainer
+                      className="img-seventh"
+                      style={{ height: '100%', width: '100%', borderRadius: '40px' }}
+                    >
+                      <SetMapView />
+                      <TileLayer
+                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                      />
+                      {markers.map((marker, index) => (
+                        <Marker
+                            icon={customMarkerIcon}
+                            key={`marker-${index}`}
+                            position={marker.position}>
+                          <Popup>{marker.title}</Popup>
+                        </Marker>
+
+                      ))}
+                    </MapContainer>
+                  </div>
               </div>
-          </div>
 
           <div className="block-eight">
               <p className="fourth-block-text sixth-block">
@@ -417,7 +469,6 @@ export default function Landing() {
               <div className="cards-second-container">
     <button className="arrow-left" onClick={() => scrollCards('left', 1)}>&lt;</button>
               <div className="cards-second">
-                  <div className="cards-inside-second"></div>
                   <div className="card-second">
                       <a href="https://www.instagram.com/horondi/?igshid=YmMyMTA2M2Y%3D" target="_blank" rel="noreferrer">
                           <img src={FirstPartner} alt="Зображення 1" className="card-image-second"/>
@@ -431,6 +482,11 @@ export default function Landing() {
                   <div className="card-second">
                       <a href="https://www.creativewomenpublishing.com.ua/" target="_blank" rel="noreferrer">
                           <img src={ThirdPartner} alt="Зображення 3" className="card-image-second"/>
+                      </a>
+                  </div>
+                  <div className="card-second">
+                      <a href="https://www.dari-mc.com/" target="_blank" rel="noreferrer" className="text-together">
+                          <img src={FourthPartner} alt="Зображення 4" className="card-image-second"/>
                       </a>
                   </div>
                   <div className="card-second">
