@@ -828,9 +828,8 @@ h2 {
   }
 
    .arrow-left-second {
-  left: -15;
-  //margin-left: 10px;
-  //margin-right: 2px;
+  left: 0;
+     margin-left: 0;
   width: 8px;
 }
 
@@ -840,7 +839,8 @@ h2 {
 
 .arrow-right-second {
   width: 8px;
-  right: -10;
+  right: 0;
+  margin-right: 0;
   margin-left: -90px;
 }
 
