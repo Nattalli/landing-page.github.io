@@ -6,13 +6,11 @@ import SecondPresent from '../../assets/img/prezent-2.png'
 import ThirdPresent from '../../assets/img/prezent-3.png'
 import FourthPresent from '../../assets/img/prezent-4.png'
 import FifthPresent from '../../assets/img/prezent-5.png'
-import SIXTHPresent from '../../assets/img/prezent-6.png'
 import FifthImage from '../../assets/img/fifth-image.png'
 import SeventhImage from '../../assets/img/seventh-image.png'
 import FirstPartner from '../../assets/img/partner-1.png'
 import SecondPartner from '../../assets/img/partner-2.png'
 import ThirdPartner from '../../assets/img/partner-3.png'
-import FourthPartner from '../../assets/img/partner-4.png'
 import FifthPartner from '../../assets/img/partner-5.png'
 import SixthPartner from '../../assets/img/partner-6.png'
 
@@ -65,6 +63,33 @@ export default function Landing() {
             console.error('Error!', error.message);
         });
     });
+    };
+
+    const scrollCards = (direction: string, toMove: number) => {
+        let container;
+        let scrollAmount;
+        if (toMove === 1) {
+          container = document.querySelector('.cards-second');
+          scrollAmount = 313;
+        } else {
+          container = document.querySelector('.cards');
+          scrollAmount = 302;
+        }
+
+      let newScrollPosition;
+      if (direction === 'left') {
+        // @ts-ignore
+          newScrollPosition = container.scrollLeft - scrollAmount;
+      } else {
+        // @ts-ignore
+          newScrollPosition = container.scrollLeft + scrollAmount;
+      }
+
+      // @ts-ignore
+        container.scrollTo({
+        left: newScrollPosition,
+        behavior: 'smooth'
+      });
     };
 
     return (
@@ -215,7 +240,8 @@ export default function Landing() {
               <p className="fourth-block-text">
                   УЧАСНИЦІ ТА УЧАСНИКИ УРОКУ- ОПИТУВАННЯ ЗМОЖУТЬ ВИГРАТИ:
               </p>
-              <div className="cards">
+            <div className="cards-container">
+              <button className="arrow-left-second" onClick={() => scrollCards('left', 2)}>&lt;</button>              <div className="cards">
                   <div className="card">
                       <img src={FirstPresent} alt="Зображення 1" className="card-image"/>
                           <p className="card-text">Набір шкарпеток від українського бренду&nbsp;
@@ -258,6 +284,9 @@ export default function Landing() {
                   </div>
                   <div className="cards-inside"></div>
               </div>
+              <button className="arrow-right-second" onClick={() => scrollCards('right', 2)}>&gt;</button>
+            </div>
+
               {isDesktop?
                   (<div className="circle-div">
                       <span className="circle"></span>
@@ -316,7 +345,7 @@ export default function Landing() {
                       <p className="text-inside-fifth-block first-article">
                           {aboutSashaTitle}
                       </p>
-                      <p className="text-inside-fifth-block first-article">
+                      <p className="text-inside-fifth-block">
                           {aboutSashaFirstPart}
                       </p>
                       <p className="text-inside-fifth-block">
@@ -385,6 +414,8 @@ export default function Landing() {
               <p className="fourth-block-text sixth-block">
                   Партнери конкурсу у 2023 році:
               </p>
+              <div className="cards-second-container">
+    <button className="arrow-left" onClick={() => scrollCards('left', 1)}>&lt;</button>
               <div className="cards-second">
                   <div className="cards-inside-second"></div>
                   <div className="card-second">
@@ -414,6 +445,8 @@ export default function Landing() {
                   </div>
                   <div className="cards-inside-second"></div>
               </div>
+<button className="arrow-right" onClick={() => scrollCards('right', 1)}>&gt;</button>
+  </div>
               {isDesktop?
                   null
                   :

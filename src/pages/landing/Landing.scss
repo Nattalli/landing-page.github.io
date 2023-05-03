@@ -107,6 +107,54 @@ p {
   //object-fit: cover;
 }
 
+.arrow-left-second {
+  text-align: left;
+}
+
+.arrow-right-second {
+  text-align: right;
+}
+
+.arrow-left-second:focus,
+.arrow-right-second:focus {
+  outline: none;
+}
+
+.cards-container {
+  position: relative;
+  margin-top: 40px;
+}
+
+.arrow-left-second,
+.arrow-right-second {
+  font-size: 3rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+
+  user-select: none;
+  font-family: Mishafi, sans-serif;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #1B1B1B;
+  z-index: 2;
+}
+
+.arrow-left-second {
+  left: -15px;
+  margin-left: 30px;
+}
+
+.arrow-right-second {
+  right: -10px;
+  margin-left: 0;
+  margin-right: 35px;
+}
+
+
 h2 {
   margin-top: 60px;
   margin-left: 60px;
@@ -553,6 +601,34 @@ h2 {
    object-fit: cover;
  }
 
+ .cards-second-container {
+  display: flex;
+  align-items: center;
+}
+
+.arrow-left,
+.arrow-right {
+  font-size: 3rem;
+  height: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  user-select: none;
+  width: 8px;
+  border-radius: 2px;
+  font-family: Mishafi, sans-serif;
+}
+
+
+
+.arrow-left:focus,
+.arrow-right:focus {
+  outline: none;
+}
+
+
  /* Mobile Styles */
  @media screen and (max-width: 767px) {
    /* General adjustments and first block*/
@@ -563,7 +639,7 @@ h2 {
 
    .block-first{
      width: 340px;
-     height: 706px;
+     height: 756px;
      margin: 0 auto;
      border-radius: 30px;
    }
@@ -630,7 +706,7 @@ h2 {
 
    .first-block {
      width: 340px;
-     height: 641px;
+     height: 860px;
    }
 
    .second-block {
@@ -727,14 +803,15 @@ h2 {
      margin-left: 20px;
      padding-top: 45px;
      padding-left: 0;
+     text-align: left;
    }
 
    .cards {
      margin-left: 37px;
      margin-right: 37px;
-
      margin-top: 40px;
      height: 326px;
+     padding-right: -30px;
    }
 
    .card-text {
@@ -745,6 +822,25 @@ h2 {
      height: 10px;
      margin: 25px 7px;
    }
+
+   .cards-container {
+    width: 350px;
+  }
+
+   .arrow-left-second {
+  left: 0;
+  margin-left: 10px;
+  width: 5px;
+}
+
+   .cards-container {
+  position: marker;
+}
+
+.arrow-right-second {
+  width: 5px;
+  margin-left: -90px;
+}
 
    /* Fifth block */
 
@@ -771,6 +867,10 @@ h2 {
 
    .first-article {
      margin-top: 45px;
+     font-weight: 500;
+    font-size: 24px;
+    line-height: 33px;
+     text-transform: none;
    }
 
    /* Sixth block */
@@ -820,6 +920,17 @@ h2 {
      margin-bottom: 20px;
    }
 
+   .certificate-text-title {
+   margin-left: 0;
+   margin-top: 0;
+   white-space: normal;
+    }
+
+ .next-lines {
+   margin-left: 0;
+   margin-bottom: 0;
+ }
+
    /* Seventh block */
 
    .block-seventh {
@@ -864,7 +975,7 @@ h2 {
      display: block;
      border-radius: 30px;
 
-     width: 340px;
+     width: 350px;
      height: 430px;
    }
 
