@@ -47,7 +47,7 @@
 
 button {
   display: inline-block;
-  margin: 27px 73.5px 0 73.5px;
+  margin: 25px 73.5px 0 73.5px;
   background: #ECFB9E;
   border-radius: 50px;
   height: 75px;
@@ -824,12 +824,12 @@ h2 {
    }
 
    .cards-container {
-    width: 350px;
+    width: 340px;
   }
 
    .arrow-left-second {
   left: 0;
-  margin-left: 10px;
+     margin-left: 0;
   width: 5px;
 }
 
@@ -839,6 +839,8 @@ h2 {
 
 .arrow-right-second {
   width: 5px;
+  right: 0;
+  margin-right: 0;
   margin-left: -90px;
 }
 
@@ -876,7 +878,7 @@ h2 {
    /* Sixth block */
 
    .block-sixth {
-     margin: 85px auto;
+     margin: 85px auto 35px;
      width: 340px;
      border-radius: 30px;
      height: auto;
@@ -907,7 +909,7 @@ h2 {
 
      height: 583px;
      border-radius: 25px;
-     padding: 46px 25px 0 25px;
+     padding: 46px 25px 25px 25px;
    }
 
    input {
@@ -974,6 +976,21 @@ h2 {
       overflow: hidden;
     }
 
+   .arrow-left,
+  .arrow-right {
+    font-size: 40px;
+    width: 8px;
+    font-family: Mishafi, sans-serif;
+  }
+
+   .arrow-left {
+     left: -10;
+   }
+
+   .allow-right {
+     right: -10;
+   }
+
 
    /* Eighth block */
 
@@ -983,7 +1000,7 @@ h2 {
      display: block;
      border-radius: 30px;
 
-     width: 350px;
+     width: 340px;
      height: 430px;
    }
 
