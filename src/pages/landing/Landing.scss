@@ -830,7 +830,8 @@ h2 {
    .arrow-left-second {
   left: 0;
   margin-left: 10px;
-  width: 5px;
+  margin-right: 2px;
+  width: 3px;
 }
 
    .cards-container {
@@ -838,7 +839,7 @@ h2 {
 }
 
 .arrow-right-second {
-  width: 5px;
+  width: 3px;
   margin-left: -90px;
 }
 
@@ -876,7 +877,7 @@ h2 {
    /* Sixth block */
 
    .block-sixth {
-     margin: 85px auto;
+     margin: 85px auto 35px;
      width: 340px;
      border-radius: 30px;
      height: auto;
@@ -973,6 +974,13 @@ h2 {
       border-radius: 40px;
       overflow: hidden;
     }
+
+   .arrow-left,
+  .arrow-right {
+    font-size: 40px;
+    width: 3px;
+    font-family: Mishafi, sans-serif;
+  }
 
 
    /* Eighth block */
