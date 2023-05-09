@@ -1,5 +1,5 @@
 import './Landing.scss';
-import FirstImage from '../../assets/img/image.png';
+import FirstImage from '../../assets/img/image.jpg';
 import SecondImage from '../../assets/img/QR_code.png'
 import FirstPresent from '../../assets/img/prezent-1.png'
 import SecondPresent from '../../assets/img/prezent-2.png'
@@ -167,7 +167,7 @@ export default function Landing() {
                           className="button-text"
                           onClick={() => handleClick("for-students")}
                       >
-                          Я школярка або школяр,
+                          Я школярка або школяр
                       </p>
                   </button>
                   <button>
@@ -175,7 +175,7 @@ export default function Landing() {
                           className="button-text"
                           onClick={() => handleClick("for-teachers")}
                       >
-                          Я вчителька або вчитель,
+                          Я вчителька або вчитель
                       </p>
                   </button>
               </p>
@@ -205,7 +205,7 @@ export default function Landing() {
 
           <div className="block-third" id="for-students">
               <p className="block-first-text-article third-block-main-text">
-                  ЯК ВЗЯТИ УЧАСТЬ В УРОЦІ-ОПИТУВАННІ ПРО ПРАВА ДІВЧАТ ТА ВИГРАТИ ПОДАРУНОК?
+                  ЯК УЗЯТИ УЧАСТЬ В УРОЦІ-ОПИТУВАННІ ПРО ПРАВА ДІВЧАТ ТА ВИГРАТИ ПОДАРУНОК?
               </p>
 
               {isDesktop ? (
@@ -428,7 +428,8 @@ export default function Landing() {
 
           <div className="block-sixth" id="for-teachers">
               <div>
-                  <p className="fourth-block-text sixth-block">{formTitle}</p>
+                  <p className="fourth-block-text sixth-block"><strong>Ви вчителька або вчитель,</strong> і хочете провести у своєму класі
+урок про права та можливості дівчат та хлопців у сучасному світі?</p>
               </div>
               <div className="lesson-plan-body">
                   <p className="certificate-text">
