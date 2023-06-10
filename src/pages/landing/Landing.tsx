@@ -487,23 +487,23 @@ export default function Landing() {
 
           <div className="block-eight">
               <p className="fourth-block-text sixth-block">
-                  Партнери конкурсу у 2023 році:
+                  ПАРТНЕРИ КОНКУРСУ У 2023 РОЦІ:
               </p>
               <div className="cards-second-container">
     <button className="arrow-left" onClick={() => scrollCards('left', 1)}>&lt;</button>
               <div className="cards-second">
                   <div className="card-second">
-                      <a href="https://www.instagram.com/horondi/?igshid=YmMyMTA2M2Y%3D" target="_blank" rel="noreferrer">
+                      <a className=".a-customized" href="https://www.instagram.com/horondi/?igshid=YmMyMTA2M2Y%3D" target="_blank" rel="noreferrer">
                           <img src={FirstPartner} alt="Зображення 1" className="card-image-second"/>
                       </a>
                   </div>
                   <div className="card-second">
-                      <a href="https://dodosocks.com/slava_zsu/" target="_blank" rel="noreferrer">
+                      <a className=".a-customized" href="https://dodosocks.com/slava_zsu/" target="_blank" rel="noreferrer">
                           <img src={SecondPartner} alt="Зображення 2" className="card-image-second"/>
                       </a>
                   </div>
                   <div className="card-second">
-                      <a href="https://www.creativewomenpublishing.com.ua/" target="_blank" rel="noreferrer">
+                      <a className=".a-customized" href="https://www.creativewomenpublishing.com.ua/" target="_blank" rel="noreferrer">
                           <img src={ThirdPartner} alt="Зображення 3" className="card-image-second"/>
                       </a>
                   </div>
@@ -518,7 +518,7 @@ export default function Landing() {
                       </a>
                   </div>
                   <div className="card-second last-card-second">
-                      <a href="https://www.instagram.com/oliz_brand/?igshid=YmMyMTA2M2Y%3D" target="_blank" rel="noreferrer">
+                      <a className=".a-customized" href="https://www.instagram.com/oliz_brand/?igshid=YmMyMTA2M2Y%3D" target="_blank" rel="noreferrer">
                           <img src={SixthPartner} alt="Зображення 6" className="card-image-second"/>
                       </a>
                   </div>

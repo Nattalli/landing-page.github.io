@@ -587,22 +587,33 @@ h2 {
    height: 200px;
  }
 
- .cards-second::-webkit-scrollbar { width: 0; }
+ .cards-second::-webkit-scrollbar { width: 0; display: flex;}
 
  .card-second {
    margin-right: 80px;
+   margin-left: 5px;
    border-radius: 20px;
+   //flex-shrink: 0;
+   margin-bottom: 5px;
+   box-shadow: 0 3px 9px rgba(0, 0, 0, 0.1);
+ }
 
+ .a-customized {
+   height: 0;
+   display: inline-block;
+   overflow: hidden;
  }
 
  .last-card-second {
-   margin-right: 0;
+   margin-right: 5px;
  }
 
  .card-image-second {
-   width: 233px;
-   border-radius: 20px;
-   height: 180px;
+   min-width: 220px;
+   width: 70%;
+   height: 70%;
+   margin: 30px auto;
+   object-fit: contain;
  }
 
  .cards-second-container {
