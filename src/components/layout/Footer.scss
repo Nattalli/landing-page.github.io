@@ -15,7 +15,7 @@ body {
 .footer-right-container {
   display: flex;
   flex-direction: column;
-  padding: 62px 60px 70px;
+  padding: 62px 30px 70px;
 }
 
 .footer-left-container {
@@ -85,16 +85,18 @@ body {
     display: flex;
     flex-direction: column;
     align-content: start;
-    padding: 45px 0 100px 25px;
-    margin-bottom: 30px;
+    padding: 45px 0 100px 0;
+    margin-bottom: 0;
     font-weight: 400;
     font-size: 13px;
     line-height: 21px;
+    margin-right: 0;
+    //width: 90%;
   }
 
   .footer-left-container {
     padding: 0;
-    margin: 0;
+    margin: 0 0 0 25px;
     display: inline;
     width: 319px;
     font-weight: 400;
@@ -111,7 +113,7 @@ body {
     margin-top: 45px;
     margin-bottom: 0;
     padding: 0;
-    margin-left: 0;
+    margin-left: 25px;
   }
 
   .footer-left-text {
