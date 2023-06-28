@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Layout, Typography, Drawer, Menu } from 'antd';
 import './Header.scss';
 import { MenuOutlined } from '@ant-design/icons';
+import InstagramImage from '../../assets/img/mdi_instagram.svg';
+import TelegramImage from '../../assets/img/ic_baseline-telegram.svg';
 
 export default function Header() {
     const [isMenuVisible, setIsMenuVisible] = useState(false);
@@ -33,10 +35,28 @@ export default function Header() {
                         Карта інноваторів/ок
                     </Typography.Link>
                 </div>
+                    <div className="header-icons">
+                        <a
+                            href="https://instagram.com/sasha_looking_for_answers"
+                            className="header-icon-link"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                          <img src={InstagramImage} className="header-icon" />
+                        </a>
+                        <a
+                            href="https://t.me/SashaLookingForAnswers_bot"
+                            className="header-icon-link"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                          < img src={TelegramImage} className="header-icon" />
+                        </a>
+                  </div>
             </div>) : (
             <div id="for-mobile">
                 <div className="menu-icon" onClick={() => setIsMenuVisible(true)}>
-                    <MenuOutlined />
+                    <MenuOutlined style={{ width: '100%' }}/>
                 </div>
                 <Drawer
                     className="menu"
@@ -62,6 +82,24 @@ export default function Header() {
                         <Menu.Item>
                             <a href="tel:+380955871367" className="last-item">+380955871367</a>
                         </Menu.Item>
+                        <div className="header-icons">
+                        <a
+                            href="https://instagram.com/sasha_looking_for_answers"
+                            className="header-icon-link"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                          <img src={InstagramImage} className="header-icon" />
+                        </a>
+                        <a
+                            href="https://t.me/SashaLookingForAnswers_bot"
+                            className="header-icon-link"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                          < img src={TelegramImage} className="header-icon" />
+                        </a>
+                  </div>
                     </Menu>
                 </Drawer>
             </div>)}
