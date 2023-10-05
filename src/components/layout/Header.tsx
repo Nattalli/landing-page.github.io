@@ -42,7 +42,7 @@ export default function Header() {
                             target="_blank"
                             rel="noreferrer"
                         >
-                          <img src={InstagramImage} className="header-icon" />
+                          <img src={InstagramImage} className="header-icon" alt="Instagram"/>
                         </a>
                         <a
                             href="https://t.me/SashaLookingForAnswers_bot"
@@ -50,7 +50,7 @@ export default function Header() {
                             target="_blank"
                             rel="noreferrer"
                         >
-                          < img src={TelegramImage} className="header-icon" />
+                          < img src={TelegramImage} className="header-icon" alt="Telegram"/>
                         </a>
                   </div>
             </div>) : (
@@ -89,7 +89,7 @@ export default function Header() {
                             target="_blank"
                             rel="noreferrer"
                         >
-                          <img src={InstagramImage} className="header-icon" />
+                          <img src={InstagramImage} className="header-icon" alt="Instagram"/>
                         </a>
                         <a
                             href="https://t.me/SashaLookingForAnswers_bot"
@@ -97,7 +97,7 @@ export default function Header() {
                             target="_blank"
                             rel="noreferrer"
                         >
-                          < img src={TelegramImage} className="header-icon" />
+                          < img src={TelegramImage} className="header-icon" alt="Telegram"/>
                         </a>
                   </div>
                     </Menu>

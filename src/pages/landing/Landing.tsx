@@ -198,7 +198,7 @@ export default function Landing() {
                   </p>
               </div>
               <div className="second-block">
-                  <img className="img-first" src={FirstImage}  alt="Block image"/>
+                  <img className="img-first" src={FirstImage}  alt="Block"/>
               </div>
           </div>
 
@@ -373,7 +373,7 @@ export default function Landing() {
 
               <div className="block-fifth">
                   <div className="fifth-block">
-                      <img className="img-fifth" src={FifthImage}  alt="Block image"/>
+                      <img className="img-fifth" src={FifthImage}  alt="Block"/>
                   </div>
                   <div className="fifth-block">
                       <p className="new-text">{aboutSashaTitle}</p>
@@ -419,7 +419,7 @@ export default function Landing() {
                       </p>
                   </div>
                   <div className="fifth-block">
-                      <img className="img-fifth" src={FifthImage}  alt="Block image"/>
+                      <img className="img-fifth" src={FifthImage}  alt="Block"/>
                   </div>
               </div>
           )}
