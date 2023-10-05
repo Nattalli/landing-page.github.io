@@ -435,7 +435,12 @@ export default function Landing() {
                       <p className="certificate-text certificate-text-title">{textForm}</p>
                       <p className="certificate-text next-lines">{textFormSecond}</p>
                       <p className="certificate-text next-lines">{textFormThird}</p>
-                      <a href="../../assets/pdf/lessons.pdf" download>
+                      <a
+                          href="https://drive.google.com/file/d/1GKmc-KpuvAVcI-_ks6OYxsgSXXaf-Dsb/view?usp=sharing"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          download
+                      >
                           <p className="certificate-text next-lines">{textFormFourth}</p>
                       </a>
 
