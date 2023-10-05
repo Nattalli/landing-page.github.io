@@ -38,7 +38,8 @@ import {
     participationInTheCompetitionThirdStep,
     textForm,
     textFormSecond,
-    textFormThird
+    textFormThird,
+    textFormFourth,
 } from "./landingTextConstants";
 
 function SetMapView() {
@@ -436,6 +437,10 @@ export default function Landing() {
                       <p className="certificate-text certificate-text-title">{textForm}</p>
                       <p className="certificate-text next-lines">{textFormSecond}</p>
                       <p className="certificate-text next-lines">{textFormThird}</p>
+                      <a href="../../assets/pdf/lessons.pdf" download>
+                          <p className="certificate-text next-lines">{textFormFourth}</p>
+                      </a>
+
                   </p>
 
                   <form className="lesson-plan-form" id="google-sheet-form">
