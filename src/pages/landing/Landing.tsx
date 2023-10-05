@@ -13,10 +13,9 @@ import ThirdPartner from '../../assets/img/partner-3.svg'
 import FourthPartner from '../../assets/img/partner-4.png'
 import FifthPartner from '../../assets/img/partner-5.png'
 import SixthPartner from '../../assets/img/partner-6.png'
-import { MapContainer, Marker, Popup, TileLayer, useMap } from 'react-leaflet';
+import {MapContainer, Marker, Popup, TileLayer, useMap} from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
-import { LatLngTuple } from 'leaflet';
-import { icon } from 'leaflet';
+import {icon, LatLngTuple} from 'leaflet';
 
 
 import {
@@ -31,15 +30,14 @@ import {
     aboutSashaTitle,
     aboutUs,
     aboutUsSecondPart,
-    formTitle,
     mapText,
     participationInTheCompetitionFirstStep,
     participationInTheCompetitionSecondStep,
     participationInTheCompetitionThirdStep,
     textForm,
+    textFormFourth,
     textFormSecond,
     textFormThird,
-    textFormFourth,
 } from "./landingTextConstants";
 
 function SetMapView() {
